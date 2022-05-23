@@ -5,7 +5,7 @@
 <aura:component description="MissingWebUserList" implements="force:appHostable" controller="MissingWebUserListCtrl">
     <aura:attribute name="data" type="Object"/>
     <aura:attribute name="columns" type="List"/>
-
+    <!-- display table on page initialization -->
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
 
     <lightning:card title="Missing User to Import">
@@ -13,6 +13,7 @@
             <lightning:button label="Import Missing Record" onclick="{!c.importData}"/>
         </aura:set>
         <p class="slds-p-horizontal_small">
+            <!-- To display a data in table format -->
             <lightning:datatable
                     keyField="id"
                     data="{! v.data }"
